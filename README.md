@@ -553,12 +553,12 @@ h1 {
 </div>
 
 <div class="menu">
-    <button onclick="startBigHug()">💖 BIG HUG 💖</button>
-    <button onclick="scrollToNos()">🌟 NÓS 🌟</button>
-    <button onclick="scrollToBinder()">📔 BINDER</button>
-    <button onclick="scrollToCharts()">📊 NAMORADOS</button>
-    <button onclick="scrollToTimeline()">⏳ TIMELINE</button>
-    <button onclick="scrollToPlaylist()">🎧 PLAYLIST</button>
+    <button onclick="startBigHug()">BIG HUG </button>
+    <button onclick="scrollToNos()">US </button>
+    <button onclick="scrollToBinder()">BINDER</button>
+    <button onclick="scrollToCharts()">CHARTS</button>
+    <button onclick="scrollToTimeline()">TIMELINE</button>
+    <button onclick="scrollToPlaylist()">PLAYLIST</button>
 </div>
 
 <!-- NÓS -->
@@ -570,9 +570,9 @@ h1 {
 
 <!-- BINDER -->
 <section class="section" id="binderSection">
-    <h1>🎴 BINDER CARDS 🎴</h1>
+    <h1>PHOTOCARDS</h1>
     <div style="text-align:center;">
-        <button onclick="drawCard()">✨ ABRIR PACOTE ✨</button>
+        <button onclick="drawCard()"> ABRIR PACOTE</button>
         <button onclick="resetBinder()" style="background:#c73b6b; margin-left:15px;">🗑️ RESETAR</button>
     </div>
     <div id="cardDisplay"></div>
