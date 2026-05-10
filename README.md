@@ -1,7 +1,4 @@
-Aqui está o código completo com o **pop-up de aniversário** (modal) que aparece ao carregar a página, contendo a mensagem emocionante que você escreveu.  
-O pop-up tem fundo escuro, botão "FECHAR" e não interfere em nenhuma funcionalidade existente (BIG HUG, Binder, Charts, Timeline, Playlist, Overlay Bi).
 
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
