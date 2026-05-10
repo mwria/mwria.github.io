@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -925,24 +926,25 @@ function closeBiOverlay() {
     document.getElementById("biOverlay").classList.remove("active");
 }
 
-// ==================== CHARTS ====================
+// ==================== CHARTS (CORRIGIDO: vírgulas e links válidos) ====================
 const chartsData = [
     { rank:1, name:"Bang Chan", group:"Stray Kids", img:"https://i.ibb.co/Bb5zyCM/aa0d0adae895b028f5c03b338d9bb47c.jpg", last:1, peak:1, weeks:999, trend:"same", ch:"" },
     { rank:2, name:"Mark", group:"NCT", img:"https://i.ibb.co/SX97RpFg/06940cd301fb5e3aac9596af42d4bbfe.jpg", last:2, peak:2, weeks:87, trend:"same", ch:"" },
     { rank:3, name:"Changbin", group:"Stray Kids", img:"https://i.ibb.co/JWk1zCfk/08d44e68d8415f79ca13079b13d9605d.jpg", last:3, peak:2, weeks:66, trend:"same", ch:"" },
     { rank:4, name:"Han Jisung", group:"Stray Kids", img:"https://i.ibb.co/Qjq2kpXk/0b630450a8fc01a898059b78346035d7.jpg", last:5, peak:4, weeks:71, trend:"up", ch:"+1" },
-    { rank:5, name:"Mingyu", group:"SEVENTEEN", img:"https://i.ibb.co/4gt21Kbg/d1a56ace8eb65f482a78b1c1c4ac1005.jpg" last:3, peak:1, weeks:55, trend:"down", ch:"-2" },
+    { rank:5, name:"Mingyu", group:"SEVENTEEN", img:"https://i.ibb.co/4gt21Kbg/d1a56ace8eb65f482a78b1c1c4ac1005.jpg", last:3, peak:1, weeks:55, trend:"down", ch:"-2" },
     { rank:6, name:"Eric", group:"THE BOYZ", img:"https://i.ibb.co/V08MK9X1/467a102e21a8eb431c273f58cd61592f.jpg", last:22, peak:6, weeks:14, trend:"up", ch:"+16cm" },
     { rank:7, name:"Mingi", group:"ATEEZ", img:"https://i.ibb.co/RG7W160K/1fea8cac7455d647619df135499352c5.jpg", last:1, peak:1, weeks:39, trend:"down", ch:"-10" },
-    { rank:8, name:"V", group:"BTS", img:"http://i.ibb.co/MmwNfVr/Eq-HPozn-XMAAz-KM.jpg", last:8, peak:2, weeks:102, trend:"same", ch:"" }
+    { rank:8, name:"V", group:"BTS", img:"https://i.ibb.co/MmwNfVr/Eq-HPozn-XMAAz-KM.jpg", last:8, peak:2, weeks:102, trend:"same", ch:"" }
 ];
 const chartsGrid = document.getElementById("chartsGrid");
+chartsGrid.innerHTML = "";
 chartsData.forEach(c => {
     const card = document.createElement("div");
     card.className = "chart-card";
     card.innerHTML = `
         <div class="top-info">
-            <img src="${c.img}">
+            <img src="${c.img}" onerror="this.src='https://via.placeholder.com/170x170?text=No+Image'">
             <div class="chart-text">
                 <div class="rank-row">
                     <span class="rank-number">${c.rank}</span>
@@ -978,6 +980,7 @@ const timelineData = [
 ];
 
 const timelineContainer = document.getElementById("timeline");
+timelineContainer.innerHTML = "";
 timelineData.forEach((item, idx) => {
     const side = idx % 2 === 0 ? "left" : "right";
     const div = document.createElement("div");
@@ -985,7 +988,7 @@ timelineData.forEach((item, idx) => {
     div.innerHTML = `
         <div class="timeline-year">${item.years}</div>
         <div class="timeline-text">${item.title}</div>
-        <img class="timeline-img" src="${item.image}" alt="${item.title}" loading="lazy">
+        <img class="timeline-img" src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200?text=Imagem+Indisponível'">
     `;
     timelineContainer.appendChild(div);
 });
@@ -1012,3 +1015,4 @@ loadBinder();
 </script>
 </body>
 </html>
+```
