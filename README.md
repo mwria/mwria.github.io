@@ -933,7 +933,7 @@ const chartsData = [
     { rank:4, name:"Han Jisung", group:"Stray Kids", img:"https://i.ibb.co/Qjq2kpXk/0b630450a8fc01a898059b78346035d7.jpg", last:5, peak:4, weeks:71, trend:"up", ch:"+1" },
     { rank:5, name:"Mingyu", group:"SEVENTEEN", img:"https://i.ibb.co/4gt21Kbg/d1a56ace8eb65f482a78b1c1c4ac1005.jpg", last:3, peak:1, weeks:55, trend:"down", ch:"-2" },
     { rank:6, name:"Eric", group:"THE BOYZ", img:"https://i.ibb.co/V08MK9X1/467a102e21a8eb431c273f58cd61592f.jpg", last:22, peak:6, weeks:14, trend:"up", ch:"+16cm" },
-    { rank:7, name:"Mingi", group:"ATEEZ", img:"https://i.ibb.co/RG7W160K/1fea8cac7455d647619df135499352c5.jpg", last:1, peak:1, weeks:39, trend:"down", ch:"-10" },
+    { rank:7, name:"Mingi", group:"ATEEZ", img:"https://i.ibb.co/sdmsRdRD/220613-mingi-v0-iijtcxznhe591.jpg", last:1, peak:1, weeks:39, trend:"down", ch:"-10" },
     { rank:8, name:"V", group:"BTS", img:"https://i.ibb.co/MmwNfVr/Eq-HPozn-XMAAz-KM.jpg", last:8, peak:2, weeks:102, trend:"same", ch:"" }
 ];
 const chartsGrid = document.getElementById("chartsGrid");
