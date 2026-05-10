@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>KPOP CHAOS | Amizade 13 anos</title>
+<title>Aniversário da Mabi!!!!!!!!!!</title>
 <style>
 /* RESET E ESTILOS GLOBAIS */
 * {
@@ -547,8 +547,8 @@ h1 {
         <p>💖 AMIGA, obrigada por tudo que você já fez e continua fazendo por mim. 💖</p>
         <p>Uma vez você me disse que deve ser divertido ter uma irmã, saiba que o que a gente tem é mil vezes mais forte e divertido que a maioria das relações.</p>
         <p>Eu amo você e amo seu aniversário por poder comemorar a maravilha do alinhamento milenar que a gente tem.</p>
-        <p>Fiz esse site pra você se divertir um pouco. ✨🎂</p>
-        <button onclick="closeModal()">FECHAR</button>
+        <p>Fiz esse site pra você se divertir um pouco. </p>
+        <button onclick="closeModal()"></button>
     </div>
 </div>
 
