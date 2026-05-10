@@ -931,10 +931,10 @@ const chartsData = [
     { rank:2, name:"Mark", group:"NCT", img:"https://i.ibb.co/SX97RpFg/06940cd301fb5e3aac9596af42d4bbfe.jpg", last:2, peak:2, weeks:87, trend:"same", ch:"" },
     { rank:3, name:"Changbin", group:"Stray Kids", img:"https://i.ibb.co/JWk1zCfk/08d44e68d8415f79ca13079b13d9605d.jpg", last:3, peak:2, weeks:66, trend:"same", ch:"" },
     { rank:4, name:"Han Jisung", group:"Stray Kids", img:"https://i.ibb.co/Qjq2kpXk/0b630450a8fc01a898059b78346035d7.jpg", last:5, peak:4, weeks:71, trend:"up", ch:"+1" },
-    { rank:5, name:"Mingyu", group:"SEVENTEEN", img:"https://i.ibb.co/kVfQW8Rr/image.png", last:3, peak:1, weeks:55, trend:"down", ch:"-2" },
-    { rank:6, name:"Eric", group:"THE BOYZ", img:"https://i.ibb.co/fdhv750J/07bc841f02955b068681bb8e7c5fb04e.jpg", last:22, peak:6, weeks:14, trend:"up", ch:"+16cm" },
+    { rank:5, name:"Mingyu", group:"SEVENTEEN", img:"https://i.ibb.co/4gt21Kbg/d1a56ace8eb65f482a78b1c1c4ac1005.jpg" last:3, peak:1, weeks:55, trend:"down", ch:"-2" },
+    { rank:6, name:"Eric", group:"THE BOYZ", img:"https://i.ibb.co/V08MK9X1/467a102e21a8eb431c273f58cd61592f.jpg", last:22, peak:6, weeks:14, trend:"up", ch:"+16cm" },
     { rank:7, name:"Mingi", group:"ATEEZ", img:"https://i.ibb.co/RG7W160K/1fea8cac7455d647619df135499352c5.jpg", last:1, peak:1, weeks:39, trend:"down", ch:"-10" },
-    { rank:8, name:"V", group:"BTS", img:"https://i.ibb.co/ZRk0NKVC/96c75a278e9011b582b930437988701b.jpg", last:8, peak:2, weeks:102, trend:"same", ch:"" }
+    { rank:8, name:"V", group:"BTS", img:"http://i.ibb.co/MmwNfVr/Eq-HPozn-XMAAz-KM.jpg", last:8, peak:2, weeks:102, trend:"same", ch:"" }
 ];
 const chartsGrid = document.getElementById("chartsGrid");
 chartsData.forEach(c => {
