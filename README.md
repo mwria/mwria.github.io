@@ -127,7 +127,6 @@ h1 {
     display: flex;
 }
 
-/* Pseudo-elemento para o fundo da bandeira com opacidade 30% */
 .bi-overlay::before {
     content: "";
     position: absolute;
@@ -137,7 +136,6 @@ h1 {
     z-index: -1;
 }
 
-/* Container das fotos extras – 100% opacas */
 .bi-photos {
     position: relative;
     z-index: 10001;
@@ -190,7 +188,8 @@ h1 {
     background: #ffe6f2;
     color: #1e1e1e;
     border-radius: 50px 50px 30px 30px;
-    margin: 40px 20px;
+    margin: 40px auto;
+    max-width: 1400px;
     padding: 30px 20px;
 }
 
@@ -279,11 +278,17 @@ h1 {
     box-shadow: 0 0 18px hotpink;
 }
 
-/* BILLBOARD */
+/* BILLBOARD (ajustada para mesma largura das outras seções) */
 #chartsSection {
     background: #efefef;
-    padding: 80px 30px;
+    padding: 80px 0;
     color: black;
+}
+
+.charts-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
 }
 
 .billboard-title {
@@ -376,7 +381,7 @@ h1 {
 .stats span { color: #4b53c5; font-weight: 900; font-size: 18px; }
 .stats strong { font-size: 55px; }
 
-/* TIMELINE */
+/* TIMELINE COM IMAGENS */
 #timelineSection {
     background: #111;
     padding: 80px 20px;
@@ -394,7 +399,7 @@ h1 {
     font-size: 22px;
 }
 .timeline {
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
     position: relative;
 }
@@ -412,7 +417,7 @@ h1 {
 .timeline-item {
     width: 45%;
     background: #1b1b1b;
-    padding: 25px;
+    padding: 20px;
     border-radius: 25px;
     margin-bottom: 50px;
     position: relative;
@@ -420,6 +425,9 @@ h1 {
     transform: translateY(80px);
     transition: 1s;
     box-shadow: 0 0 20px rgba(255,105,180,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 .timeline-item.show {
     opacity: 1;
@@ -432,14 +440,22 @@ h1 {
     left: 55%;
 }
 .timeline-year {
-    font-size: 55px;
+    font-size: 45px;
     font-weight: bold;
     color: hotpink;
+    margin-bottom: 5px;
 }
 .timeline-text {
+    font-size: 20px;
+    line-height: 1.4;
+}
+.timeline-img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
     margin-top: 10px;
-    font-size: 22px;
-    line-height: 1.5;
+    border: 2px solid #ff69b4;
 }
 
 /* PLAYLIST */
@@ -467,7 +483,7 @@ h1 {
     box-shadow: 0 0 30px rgba(0,0,0,0.15);
 }
 
-/* ===== POP-UP DE ANIVERSÁRIO ===== */
+/* POP-UP DE ANIVERSÁRIO */
 .modal {
     display: none;
     position: fixed;
@@ -534,8 +550,9 @@ h1 {
     .top-info img { width: 100%; height: auto; }
     .rank-number { font-size: 50px; }
     .timeline::before { left: 20px; }
-    .timeline-item { width: calc(100% - 60px); left: 40px !important; }
+    .timeline-item { width: calc(100% - 60px); left: 40px !important; flex-direction: column; }
     .modal-content p { font-size: 1.1rem; }
+    .charts-wrapper { padding: 0 15px; }
 }
 </style>
 </head>
@@ -547,14 +564,14 @@ h1 {
         <p>💖 AMIGA, obrigada por tudo que você já fez e continua fazendo por mim. 💖</p>
         <p>Uma vez você me disse que deve ser divertido ter uma irmã, saiba que o que a gente tem é mil vezes mais forte e divertido que a maioria das relações.</p>
         <p>Eu amo você e amo seu aniversário por poder comemorar a maravilha do alinhamento milenar que a gente tem.</p>
-        <p>Fiz esse site pra você se divertir um pouco. </p>
-        <button onclick="closeModal()"></button>
+        <p>Fiz esse site pra você se divertir um pouco.</p>
+        <button onclick="closeModal()">FECHAR</button>
     </div>
 </div>
 
 <div class="menu">
-    <button onclick="startBigHug()">BIG HUG </button>
-    <button onclick="scrollToNos()">US </button>
+    <button onclick="startBigHug()">BIG HUG</button>
+    <button onclick="scrollToNos()">US</button>
     <button onclick="scrollToBinder()">BINDER</button>
     <button onclick="scrollToCharts()">CHARTS</button>
     <button onclick="scrollToTimeline()">TIMELINE</button>
@@ -569,10 +586,10 @@ h1 {
 </section>
 
 <!-- BINDER -->
-<section class="section" id="binderSection">
+<section id="binderSection">
     <h1>PHOTOCARDS</h1>
     <div style="text-align:center;">
-        <button onclick="drawCard()"> ABRIR PACOTE</button>
+        <button onclick="drawCard()">ABRIR PACOTE</button>
         <button onclick="resetBinder()" style="background:#c73b6b; margin-left:15px;">🗑️ RESETAR</button>
     </div>
     <div id="cardDisplay"></div>
@@ -583,13 +600,19 @@ h1 {
     </div>
 </section>
 
-<!-- NAMORADOS DA MABI CHARTS -->
+<!-- NAMORADOS DA MABI CHARTS (com wrapper centralizado) -->
 <section id="chartsSection">
-    <div class="billboard-title"><div class="line"></div><h1>Namorados da Mabi™</h1><div class="line"></div></div>
-    <div class="charts-grid" id="chartsGrid"></div>
+    <div class="charts-wrapper">
+        <div class="billboard-title">
+            <div class="line"></div>
+            <h1>Namorados da Mabi™</h1>
+            <div class="line"></div>
+        </div>
+        <div class="charts-grid" id="chartsGrid"></div>
+    </div>
 </section>
 
-<!-- TIMELINE -->
+<!-- TIMELINE (com imagens) -->
 <section id="timelineSection">
     <h1 class="timeline-title">COISAS QUE DURARAM MENOS QUE NOSSA AMIZADE</h1>
     <p class="timeline-sub">13 anos insuperáveis infelizmente</p>
@@ -938,30 +961,36 @@ chartsData.forEach(c => {
     chartsGrid.appendChild(card);
 });
 
-// ==================== TIMELINE ====================
+// ==================== TIMELINE COM IMAGENS ====================
 const timelineData = [
-    { year: 1, text: "Governo do Jânio Quadros" },
-    { year: 2, text: "namoro 'Jelena' (Justin Bieber + Selena Gomez)" },
-    { year: 3, text: "relacionamento de Ian Somerhalder e Nina Dobrev" },
-    { year: 4, text: "LOONA" },
-    { year: 5, text: "sua faculdade" },
-    { year: 6, text: "One Direction" },
-    { year: 7, text: "Pretty Little Liars" },
-    { year: 8, text: "Stray Kids (e contando ♡)" },
-    { year: 9, text: "Depois das Onze" },
-    { year: 10, text: "Friends" },
-    { year: 11, text: "amizade Thabie" },
-    { year: 12, text: "Ciclo do Zodíaco Chinês" },
-    { year: 13, text: "Império Macedônico de Alexandre, o Grande" }
+    { years: "1 ano", title: "Governo Jânio Quadros", image: "https://i.ibb.co/60cVX3Ns/retroto-de-janio-quadros-1954-do-fotografo-chico-albuquerque-1395325218947-600x800.jpg" },
+    { years: "2 anos", title: "Jelena", image: "https://i.ibb.co/hqfPPGb/jelena-ama.webp" },
+    { years: "3 anos", title: "Ian & Nina", image: "https://i.ibb.co/zh1Nsq0K/Ian-Somerhalder-Nina-Dobrev-The-Vampire-Diaries.jpg" },
+    { years: "4 anos", title: "LOONA", image: "https://i.ibb.co/Xf7PXY9S/140bfcca76325e621e62fa6156d96796.avif" },
+    { years: "5 anos", title: "Sua faculdade", image: "https://i.ibb.co/yv9jSKJ/unesp.jpg" },
+    { years: "6 anos", title: "One Direction", image: "https://i.ibb.co/7JmYy7z4/images.jpg" },
+    { years: "7 anos", title: "Pretty Little Liars", image: "https://i.ibb.co/TBkvnphs/81-BP7-Ra-WDBL-AC-UF894-1000-QL80.jpg" },
+    { years: "8 anos", title: "Stray Kids", image: "https://i.ibb.co/gZfR0p6L/s-S2v7ya9vq6-large.jpg" },
+    { years: "9 anos", title: "The Office (EUA)", image: "https://i.ibb.co/3q319KS/image.webp" },
+    { years: "10 anos", title: "Friends", image: "https://i.ibb.co/dsHScZnd/UGD4-ZQVE7-JIXTHKUXFZ6-YLNRFI.jpg" },
+    { years: "12 anos", title: "Ciclo do Zodíaco Chinês", image: "https://i.ibb.co/8nPxW4DQ/Horo-scopo-6.png" },
+    { years: "13 anos", title: "Império Macedônico", image: "https://i.ibb.co/Lz8ptR0h/1902-super-site2.webp" }
 ];
+
 const timelineContainer = document.getElementById("timeline");
 timelineData.forEach((item, idx) => {
     const side = idx % 2 === 0 ? "left" : "right";
     const div = document.createElement("div");
     div.className = `timeline-item ${side}`;
-    div.innerHTML = `<div class="timeline-year">${item.year} ano</div><div class="timeline-text">${item.text}</div>`;
+    div.innerHTML = `
+        <div class="timeline-year">${item.years}</div>
+        <div class="timeline-text">${item.title}</div>
+        <img class="timeline-img" src="${item.image}" alt="${item.title}" loading="lazy">
+    `;
     timelineContainer.appendChild(div);
 });
+
+// Intersection Observer para revelar os itens da timeline
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -983,4 +1012,3 @@ loadBinder();
 </script>
 </body>
 </html>
-```
